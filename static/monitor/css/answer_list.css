@@ -1,0 +1,25 @@
+div.panel-heading{
+  text-align:center;
+}
+
+li.dropdown{
+  float:right;
+}
+#titlecenter{
+  margin-left:30%;
+  margin-right:0;
+  width:40%;
+  text-align:center;
+}
+ul.nav.navbar-nav{
+  width:30%;
+}
+#selector{
+  margin-bottom:20px;
+}
+#download{
+  background-color: #5bc0de;
+  border-color:white;
+  color: white;
+  margin-bottom:20px;
+}

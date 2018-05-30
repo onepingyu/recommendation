@@ -1,0 +1,51 @@
+﻿#progresshint{
+  float:right;
+  font-size:20px; 
+  font-family: 微软雅黑;
+  color:red;
+}
+#testtitle{
+  margin:0;
+  text-align:center;
+  font-size:36px; 
+  font-family: 微软雅黑;
+}
+a.navbar-brand{
+  text-align:center;
+  font-family: 微软雅黑;
+}
+ul.nav.navbar-nav{
+  width:30%;
+}
+#titlecenter{
+  margin-left:30%;
+  margin-right:0;
+  width:40%;
+  text-align:center;
+}
+form{
+  width:50%;
+}
+#upload{
+  padding-bottom:20px;
+}
+#attention{
+  color:red;
+  padding-top:10px;
+  padding-bottom:10px;
+  font-family: 微软雅黑;
+  background-color:white;
+}
+a.dropdown-toggle{
+  text-align:right;
+}
+li.dropdown{
+  float:right;
+}
+ol{
+  font-size:20px; 
+  font-family: 宋体;
+}
+div#test.jumbotron{
+  padding-bottom:20px;
+}

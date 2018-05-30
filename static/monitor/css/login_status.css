@@ -1,0 +1,10 @@
+th{
+  text-align:center;
+}
+
+div.panel-heading{
+  text-align:center;
+}
+div#test.jumbotron{
+min-height:400px; height:auto!important; height:400px;
+}
