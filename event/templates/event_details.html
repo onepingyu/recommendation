@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span2">
+		</div>
+		<div class="span8" style="margin-left:100px ;margin-right: 500px">
+			<div class="row-fluid">
+				<div class="span12">
+					<h1 class="text-left">
+						{{ event_name }}
+					</h1>
+					<ul>
+						<li>
+							Host: {%  for organizer in organizers %} {{ organizer.username }} {% endfor %}
+						</li>
+						<li>
+							Time: {{ start_time }}~{{ end_time }}
+						</li>
+						<li>
+							Address: {{ address }}
+						</li>
+						<li>
+							Group: {{ group }}
+						</li>
+					</ul>
+					<dl>
+						<dt>
+							Descriptions:
+						</dt>
+						<dd>
+							{{ descriptions }}
+						</dd>
+					</dl>
+                    <p>
+						<em>Member: {%  for member in members %} {{ member.user.username }} {% endfor %}</em>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="span2">
+		</div>
+	</div>
+</div>
+{% endblock %}

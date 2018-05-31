@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span2">
+		</div>
+		<div class="span8"  style="margin-left:100px ;margin-right: 500px">
+			<div class="row-fluid">
+				<div class="span12">
+					<h1 class="text-left">
+						{{ group_name }}
+					</h1>
+					<ul>
+						<li>
+							Host: {{ host_name }}
+						</li>
+						<li>
+							Create Time: {{ create_time }}
+						</li>
+                        <li>
+							Address: {{ address }}
+						</li>
+						<li>
+							Members : {{ member_num }}
+						</li>
+					</ul>
+					<dl>
+						<dt>
+							Descriptions:
+						</dt>
+						<dd>
+							{{ descriptions }}
+						</dd>
+					</dl>
+                    <p>
+						<em>Who has joined us: {%  for member in members %} {{ member.username }} {% endfor %}</em>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="span2">
+		</div>
+	</div>
+</div>
+{% endblock %}

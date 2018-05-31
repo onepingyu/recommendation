@@ -19,13 +19,13 @@ from django.urls import path, include
 from api.views import login_view, index, logout_view, register
 
 urlpatterns = [
-    path('', index),
+    path('', index, name='index'),
     path('grappelli/',include('grappelli.urls')),
     path('admin/', admin.site.urls),
-    path('login/', login_view),
+    path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout'),
     path('register/', register, name='register'),
-    # path(r'^event/', include(('event.urls','event'), namespace='event')),
+    path('event/', include(('event.urls','event'), namespace='event')),
     # path(r'^user/', include(('user.urls','user'), namespace='user')),
-    # path(r'^group/', include(('group.urls','group'), namespace='group')),
+    path('group/', include(('group.urls','group'), namespace='group')),
 ]

@@ -28,12 +28,13 @@ class UserForm(forms.Form):
 
 
 def index(request):
-    return render_to_response('index.html')
+    has_login = True if request.user.is_authenticated else False
+    return render_to_response('index.html', context={"has_login" : has_login})
 
 
 def login_view(request):
-    # if request.user.is_authenticated:
-    #     return HttpResponseRedirect('/')
+    if request.user.is_authenticated:
+        return HttpResponseRedirect('/')
     if request.method == 'GET':
         uf = UserForm()
         context = {'uf': uf,}
