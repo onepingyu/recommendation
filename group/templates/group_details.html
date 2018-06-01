@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block body %}
+<form class="form-signin" method = 'post' enctype="multipart/form-data">
 <div class="container-fluid">
 	<div class="row-fluid">
 		<div class="span2">
@@ -36,6 +37,9 @@
                     <p>
 						<em>Who has joined us: {%  for member in members %} {{ member.username }} {% endfor %}</em>
 					</p>
+                {% if not has_attend %}
+                		<button class="btn btn-lg btn-primary btn-block btn-group" type="submit">Join us</button>
+                {% endif %}
 				</div>
 			</div>
 		</div>
@@ -43,4 +47,5 @@
 		</div>
 	</div>
 </div>
+</form>
 {% endblock %}

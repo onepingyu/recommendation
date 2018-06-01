@@ -3,6 +3,7 @@
 {% block body %}
 
 <div class="container-fluid">
+      <form class="form-signin" method = 'post' enctype="multipart/form-data">
 	<div class="row-fluid">
 		<div class="span2">
 		</div>
@@ -37,11 +38,15 @@
                     <p>
 						<em>Member: {%  for member in members %} {{ member.user.username }} {% endfor %}</em>
 					</p>
+                {% if not has_attend %}
+                		<button class="btn btn-lg btn-primary btn-block btn-group" type="submit">Join us</button>
+                {% endif %}
 				</div>
 			</div>
 		</div>
 		<div class="span2">
 		</div>
 	</div>
+      </form>
 </div>
 {% endblock %}
