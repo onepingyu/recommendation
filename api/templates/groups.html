@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
 {% block body %}
-    <a class="btn-sm" style="float: right" href="/groups/">Join Group</a>
-    {% for event in events %}
+    <a class="btn-sm" style="float: right" href="/">Join Events</a>
+    {% for group in groups %}
 <div class="container">
 	<div class="row">
 		<div class="span12">
 			<h2>
-				{{ event.name }}
+				{{ group.name }}
 			</h2>
 			<p>
-				{{ event.description }}
+				{{ group.description }}
             </p>
 			<p>
-				<a class="btn" href="/event/{{ event.id }}">查看更多 »</a>
+				<a class="btn" href="/group/{{ group.id }}">查看更多 »</a>
 			</p>
 		</div>
 	</div>

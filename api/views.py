@@ -5,6 +5,10 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadReque
 from django.shortcuts import render, render_to_response
 from django.contrib.auth import authenticate, login, logout
 from django.template import RequestContext
+import datetime
+
+from event.models import Event
+from group.models import Group
 
 
 class UserForm(forms.Form):
@@ -29,7 +33,18 @@ class UserForm(forms.Form):
 
 def index(request):
     has_login = True if request.user.is_authenticated else False
-    return render_to_response('index.html', context={"has_login" : has_login})
+    now = datetime.datetime.now()
+    events = Event.objects.filter(create_time__gt=now).all()
+    return render_to_response('index.html', context={"has_login": has_login,
+                                                     "events": events})
+
+
+def get_groups(request):
+    has_login = True if request.user.is_authenticated else False
+    groups = Group.objects.all()
+    return render_to_response('groups.html', context={"has_login": has_login,
+                                                     "groups": groups})
+
 
 
 def login_view(request):

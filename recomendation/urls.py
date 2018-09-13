@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from api.views import login_view, index, logout_view, register
+from api.views import login_view, index, logout_view, register, get_groups
 
 urlpatterns = [
     path('', index, name='index'),
@@ -28,4 +28,5 @@ urlpatterns = [
     path('event/', include(('event.urls','event'), namespace='event')),
     # path(r'^user/', include(('user.urls','user'), namespace='user')),
     path('group/', include(('group.urls','group'), namespace='group')),
+    path('groups/', get_groups, name='groups')
 ]
